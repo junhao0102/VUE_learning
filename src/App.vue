@@ -1,15 +1,13 @@
 <template>
   <div>
-    <test></test>
-    <test2></test2>
-    <test3></test3>
+   <search></search>
+   <list></list>
   </div>
 </template>
 
 <script>
-import test from './components/test.vue';
-import test2 from './components/test2.vue';
-import test3 from './components/test3.vue';
+import search from './components/search.vue';
+import list from './components/list.vue';
 
 export default {
   name: 'app',
@@ -17,7 +15,7 @@ export default {
     return {};
   },
   components: {
-    test,test2,test3
+    search,list
   },
 };
 </script>
