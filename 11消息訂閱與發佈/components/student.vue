@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import pubsub from 'pubsub-js';
 export default {
   name: 'student',
   data() {
@@ -15,13 +16,13 @@ export default {
       age: 18,
     };
   },
-  methods: {
-    sendData() {
-      //調用hello事件
-      this.$bus.$emit('hello', this.name);
-    },
-  },
-};
+  methods:{
+    sendData(){
+      pubsub.publish('school', {"name":this.name ,"age":this.age});
+    }
+  }
+  }
+
 </script>
 
 <style scoped>

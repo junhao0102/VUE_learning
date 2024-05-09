@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import pubsub from 'pubsub-js';
 export default {
   name: 'school',
   data() {
@@ -15,14 +16,12 @@ export default {
     };
   },
   mounted() {
-    //綁定hello事件
-    this.$bus.$on('hello', (data) => {
-      console.log('已收到傳回數據', data);
-    });
+    this.SubID = pubsub.subscribe('school', (pubsubName, data) => {
+      console.log('學校組件收到的數據', pubsubName, data);  //箭頭函數用來找this
+    })
   },
-  beforedestroy() {
-    //解除hello事件
-    this.$bus.$off('hello');
+  beforeDestroy() {
+    pubsub.unsubscribe(this.SubID);
   },
 };
 </script>
@@ -31,6 +30,7 @@ export default {
 .school {
   background-color: aqua;
 }
+
 button {
   background-color: orange;
 }
