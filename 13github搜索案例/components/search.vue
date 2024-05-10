@@ -18,12 +18,18 @@
         },
         methods: {
             btn() {
+                //請求前更新數據
+                this.$bus.$emit('userlist',{isFirst:false,isLoad:true,errorMsg:'',users:[]});
                 axios.get('https://api.github.com/search/users?q=' + this.keyword).then(
                     (response) => {
-                        this.$bus.$emit('userlist', response.data.items);
+                        console.log("請求成功")
+                        //請求成功更新數據
+                        this.$bus.$emit('userlist',{isLoad:false,errorMsg:'',users:response.data.items});
                     },
                     (error) => {
-                        console.log(error.message);
+                        console.log(error.message);     
+                        //請求失敗更新數據
+                        this.$bus.$emit('userlist',{isLoad:false,errorMsg:error.message,users:[]});
                     }
                 )
             }

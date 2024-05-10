@@ -1,0 +1,72 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+/* Page header styles */
+.page-header {
+    
+    text-align: center;
+    color: black;
+    padding: 0;
+    margin: 0 0 -50px 0;
+    
+}
+
+/* List group styles */
+.list-group {
+    position: relative;
+    margin-top: 20px;
+    top: 100px;
+    left:600px
+}
+
+.list-group-item {
+    display:flex;
+    flex-direction:column;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    width: 200px;
+}
+
+.list-group-item:hover {
+    background-color: #f0f0f0;
+}
+
+.list-group-item.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Panel styles */
+.panel {
+    position: relative;
+    top:0px;
+    left:900px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    width: 500px;
+    height: 80px;
+}
+
+.panel-body {
+    padding: 20px;
+    
+}
+
+
+
+
