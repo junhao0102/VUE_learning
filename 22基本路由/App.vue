@@ -87,7 +87,7 @@
     border: 1px solid #ddd;
     margin-top: 20px;
     width: 300px;
-    height: 150px;
+    height: 80px;
   }
 
   .panel-body {
