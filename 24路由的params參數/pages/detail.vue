@@ -1,13 +1,12 @@
 <template>
     <ul>
-        <li>id: {{ id }}</li>
-        <li>title: {{ title }}</li>
+        <li>id: {{ $route.params.id }}</li>
+        <li>title: {{ $route.params.title }}</li> 
     </ul>
 </template>
 
 <script>
     export default {
         name: 'detail',
-        props: ['id', 'title']
     };
 </script>

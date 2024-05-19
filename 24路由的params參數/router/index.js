@@ -27,20 +27,14 @@ export default new VueRouter({
                     component: message,
                     children: [
                         {
-                            name: 'detail',
+                            name:'detail',
                             path: 'detail/:id/:title',  //:id和:title是佔位符，用來接收params參數
-                            component: detail,
-                            props($route) {
-                                return {
-                                    id: $route.params.id,
-                                    title: $route.params.title
-                                }
-                            },
-
-                        }]
-
+                            component: detail
+                        }
+                    ]
                 }
             ]
-        }
+        },
+
     ]
 });
